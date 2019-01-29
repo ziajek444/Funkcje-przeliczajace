@@ -39,12 +39,12 @@ namespace moutain_warning
                 return 100.0F;
             }
 
-            // wzór -> zagrozenie = ( 50000SW * sqrt(Wilgotnosc) ) / ( Temperatura^2 * (cisnienie/10) )
+            // wzór -> zagrozenie = ( 5000SW * sqrt(Wilgotnosc) ) / ( Temperatura^2 * (cisnienie/11) )
 
-            SilaWiatru *= 50000;
+            SilaWiatru *= 5000;
             Wilgotnosc = Math.Sqrt((WilToDegre(Wilgotnosc)));
             Temperatura *= Temperatura;
-            Cisnienie /= 10;
+            Cisnienie /= 11;
 
             double debugLicznik = (SilaWiatru * Wilgotnosc);
             double debugMianownik = (Temperatura * Cisnienie);
