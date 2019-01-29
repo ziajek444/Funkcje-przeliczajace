@@ -16,27 +16,27 @@ namespace moutain_warning
             if (Temperatura < 15.0F)
             {
                 System.Console.Write("Za zimno, zagrozenie ponad skale !!\n");
-                ZAGROZENIE = 100.0F;
+                return 100.0F;
             }
             if (SilaWiatru > 20.0F)
             {
                 System.Console.Write("Za mocny wiatr, zagrozenie ponad skale !!\n");
-                ZAGROZENIE = 100.0F;
+                return 100.0F;
             }
             if (Cisnienie < 700.0F)
             {
                 System.Console.Write("Za niskie cisnienie, zagrozenie ponad skale !!\n");
-                ZAGROZENIE = 100.0F;
+                return 100.0F;
             }
             if (Wilgotnosc < 30.0F)
             {
                 System.Console.Write("Za suche powietrze, zagrozenie ponad skale !!\n");
-                ZAGROZENIE = 100.0F;
+                return 100.0F;
             }
             if (Wilgotnosc > 80.0F)
             {
                 System.Console.Write("Powietrze zbyt wilgotne, zagrozenie ponad skale !!\n");
-                ZAGROZENIE = 100.0F;
+                return 100.0F;
             }
 
             // wzór -> zagrozenie = ( 50000SW * sqrt(Wilgotnosc) ) / ( Temperatura^2 * (cisnienie/10) )
