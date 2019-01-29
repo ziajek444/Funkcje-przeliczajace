@@ -1,3 +1,10 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
 
 #include <iostream>
 #include <math.h>
@@ -58,12 +65,12 @@ double ZagrorzenieCal(double Temperatura, double SilaWiatru, double Cisnienie, d
             return 100.0;
     }
 
-    // wzór -> zagrozenie = ( 50000SW * sqrt(Wilgotnosc) ) / ( Temperatura^2 * (cisnienie/10) )
+    // wzC3r -> zagrozenie = ( 50000SW * sqrt(Wilgotnosc) ) / ( Temperatura^2 * (cisnienie/10) )
 
-    SilaWiatru *= 50000;
+    SilaWiatru *= 5000;
     Wilgotnosc = sqrt((WilToDegre(Wilgotnosc)));
     Temperatura *= Temperatura;
-    Cisnienie /= 10;
+    Cisnienie /= 11;
 
     double debugLicznik = (SilaWiatru*Wilgotnosc);
     double debugMianownik = (Temperatura*Cisnienie);
@@ -91,11 +98,11 @@ double ZagrorzenieCal(double Temperatura, double SilaWiatru, double Cisnienie, d
 
 int main()
 {
-    double Temperatura; // Mniej niż 15 -> ŹLE
-    double SilaWiatru; // Wiecej niz 20m/s -> ŹLE
-    // kierunek wiatru nie ma znaczenia dla zagraożenia
-    double Cisnienie; // Mniej niz 700 Hpa -> ŹLE
-    double Wilgotnosc; // Mniej niz 30% ŹLE AND Więcej niż 80% -> ŹLE
+    double Temperatura; // Mniej niE< 15 -> E9LE
+    double SilaWiatru; // Wiecej niz 20m/s -> E9LE
+    // kierunek wiatru nie ma znaczenia dla zagraoE<enia
+    double Cisnienie; // Mniej niz 700 Hpa -> E9LE
+    double Wilgotnosc; // Mniej niz 30% E9LE AND WiDcej niE< 80% -> E9LE
 
     double Zagr = 0;
 
@@ -140,9 +147,14 @@ int main()
     cout<<"Idealne warunki wilgoc 75%\n";
     Zagr = ZagrorzenieCal(24.0, 1.0, 1000.0, 75.0,0);
     printf("Zagr: %F\n",Zagr);
+    
+    cout<<"TEST\n";
+    Zagr = ZagrorzenieCal(16.0, 10.0, 900.0, 80.0,0);
+    printf("Zagr: %F\n",Zagr);
+
 
     // Jezeli zagrozenie jest wieksze od 1 to ni chuja w gory
-    // jezeli jest mniejsze lub rónw 1 to ok :d
+    // jezeli jest mniejsze lub rC3nw 1 to ok :d
 
     return 0;
 }
