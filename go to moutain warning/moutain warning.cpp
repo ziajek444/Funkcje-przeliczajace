@@ -38,32 +38,27 @@ double ZagrorzenieCal(double Temperatura, double SilaWiatru, double Cisnienie, d
     double ZAGROZENIE;
     // warunki
     if(Temperatura < 15.0) {
-            printf("Za zimno, zagrozenie ponad skale !!");
-            ZAGROZENIE = 100;
-            return -1;
+            printf("Za zimno, zagrozenie ponad skale !!\n");
+            return 100.0;
     }
     if(SilaWiatru > 20.0) {
-            printf("Za mocny wiatr, zagrozenie ponad skale !!");
-            ZAGROZENIE = 100;
-            return -1;
+            printf("Za mocny wiatr, zagrozenie ponad skale !!\n");
+            return 100.0;
     }
     if(Cisnienie < 700.0) {
-            printf("Za niskie cisnienie, zagrozenie ponad skale !!");
-            ZAGROZENIE = 100;
-            return -1;
+            printf("Za niskie cisnienie, zagrozenie ponad skale !!\n");
+            return 100.0;
     }
     if(Wilgotnosc < 30.0) {
-            printf("Za suche powietrze, zagrozenie ponad skale !!");
-            ZAGROZENIE = 100;
-            return -1;
+            printf("Za suche powietrze, zagrozenie ponad skale !!\n");
+            return 100.0;
     }
     if(Wilgotnosc > 80.0) {
-            printf("Powietrze zbyt wilgotne, zagrozenie ponad skale !!");
-            ZAGROZENIE = 100;
-            return -1;
+            printf("Powietrze zbyt wilgotne, zagrozenie ponad skale !!\n");
+            return 100.0;
     }
 
-    // wzór -> zagrozenie = ( 50000SW * sqrt(Wilgotnosc) ) / ( Temperatura^2 * (cisnienie/10) )
+    // wzÃ³r -> zagrozenie = ( 50000SW * sqrt(Wilgotnosc) ) / ( Temperatura^2 * (cisnienie/10) )
 
     SilaWiatru *= 50000;
     Wilgotnosc = sqrt((WilToDegre(Wilgotnosc)));
@@ -96,11 +91,11 @@ double ZagrorzenieCal(double Temperatura, double SilaWiatru, double Cisnienie, d
 
 int main()
 {
-    double Temperatura; // Mniej ni¿ 15 -> LE
-    double SilaWiatru; // Wiecej niz 20m/s -> LE
-    // kierunek wiatru nie ma znaczenia dla zagrao¿enia
-    double Cisnienie; // Mniej niz 700 Hpa -> LE
-    double Wilgotnosc; // Mniej niz 30% LE AND Wiêcej ni¿ 80% -> LE
+    double Temperatura; // Mniej niÅ¼ 15 -> Å¹LE
+    double SilaWiatru; // Wiecej niz 20m/s -> Å¹LE
+    // kierunek wiatru nie ma znaczenia dla zagraoÅ¼enia
+    double Cisnienie; // Mniej niz 700 Hpa -> Å¹LE
+    double Wilgotnosc; // Mniej niz 30% Å¹LE AND WiÄ™cej niÅ¼ 80% -> Å¹LE
 
     double Zagr = 0;
 
@@ -147,7 +142,7 @@ int main()
     printf("Zagr: %F\n",Zagr);
 
     // Jezeli zagrozenie jest wieksze od 1 to ni chuja w gory
-    // jezeli jest mniejsze lub rónw 1 to ok :d
+    // jezeli jest mniejsze lub rÃ³nw 1 to ok :d
 
     return 0;
 }
