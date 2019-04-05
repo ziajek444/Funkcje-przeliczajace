@@ -56,5 +56,6 @@ int main()
 
 	cout << std::boolalpha << test_positive(initial_tab, tab_res1, DecDigToBits, 10)<<"\n";
 	cout << std::boolalpha << test_positive(initial_tab, tab_res2, BitsToDecDig, 10)<<"\n";
-
+	cout<<std::noboolalpha;
+	
 }
