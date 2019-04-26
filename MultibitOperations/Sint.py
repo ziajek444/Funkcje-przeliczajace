@@ -33,15 +33,14 @@ class Sint:
     def __init__(self, number = "0", repres = None):
         if repres is None:
             self.__representation = self.data_representation.Decimal;
-            print(type(self.__representation))
-            print(self.__representation)
+            #print(type(self.__representation))
+            #print(self.__representation)
         else:
-            
-            print(type(repres))
-            print(repres)
+            #print(type(repres))
+            #print(repres)
             self.__representation = repres;
-            print(type(self.__representation))
-            print(self.__representation)
+            #print(type(self.__representation))
+            #print(self.__representation)
             
         self.value = str(number);
         self.size = len(self.value);
@@ -52,6 +51,18 @@ class Sint:
         return self;
     def __add__(self, other):
         self.ADD(other);
+        return self;
+    def __rmul__(self, other):
+        self.MUL(other);
+        return self;
+    def __mul__(self, other):
+        self.MUL(other);
+        return self;
+    def __rsub__(self, other):
+        self.MUL(other);
+        return self;
+    def __sub__(self, other):
+        self.MUL(other);
         return self;
     def __str__(self):
         return "{0}".format(self.value)
@@ -116,10 +127,26 @@ class Sint:
            pass
         else: raise Exception("Wrong representation type #2");
         # END if
-    def SUB(self,input_value):
-        
+    def SUB(self,input_value,Right = True):
+        if (self.__representation.name == 'Decimal'):
+            print("deci sub")
+            if Right:
+                # self.value - input_value
+                
+            else:
+                # input_value - self.value
         pass;
     def MUL(self,input_value):
+        if (self.__representation.name == 'Decimal'):
+            print("deci mul")
+            pass
+        elif (self.__representation.name == 'Octal'):
+            pass
+        elif (self.__representation.name == 'Binary'):
+            pass
+        elif (self.__representation.name == 'Hexadecimal'):
+           pass
+        else: raise Exception("Wrong representation type #2");
         pass;
     def DIV(self,input_value):
         pass;
@@ -164,7 +191,19 @@ if __name__ == "__main__":
     twoja2 = Sint("986881",Sint.data_representation.Decimal);
     twoja2 = twoja2 + twoja1;
     print("go: ",twoja2," ? 1052416")
+    twoja1 = Sint("12432345")
+    twoja2 = "12432345" + twoja1;
+    print("go: ",twoja2," ? 24864690")
+    twoja1 = Sint("0000111122223333")
+    twoja2 = twoja1 + "9999999999"
+    print("go: ",twoja2," ? 0000121122223332")
+
+
+
+
+
+
+
 
 
     
-
